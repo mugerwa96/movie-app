@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const MovieCard = (props) => {
-  const{Title,Year,imdbID,Type,Poster}= props.data;
+  const{Title,Year,imdbID,Poster}= props.data;
 
 
   return (

@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Layout from '../components/Layout'
 import MovieCard from './Movies/MovieCard'
-import { useDispatch, useSelector } from 'react-redux'
+import {  useSelector } from 'react-redux'
 import Loader from '../images/ajax-loader.gif'
 import Error from '../images/searchloader.gif'
 
 const Home = () => {
-  const dispatch = useDispatch();
+
   const { movies: { moviesList }, movies: { status } } = useSelector(state => state.movies);
 
 
@@ -28,7 +28,7 @@ const Home = () => {
             <div className='font-bold text-red-600 flex items-center justify-center h-screen text-sm'>Check Your Internet connection</div>
             :
             <div className='md:max-w-4xl mx-auto  md:mb-12'>
-              {
+              { 
                 moviesList ?
                   <Layout title="Latest Movies">
 
@@ -44,14 +44,14 @@ const Home = () => {
 
                   :
                   <div className='h-[100vh]'>
-                    
-                      <div className='flex flex-col items-center h-[80vh] justify-center '>
-                        <img src={Error} alt="" className='w-[8rem]' />
-                      <p className='text-red-800 font-bold'>Result not found</p>
-                      </div>
 
+                    <div className='flex flex-col items-center h-[80vh] justify-center '>
+                      <img src={Error} alt="" className='w-[8rem]' />
+                      <p className='text-red-800 font-bold'>Result not found</p>
                     </div>
-                 
+
+                  </div>
+
               }
 
 

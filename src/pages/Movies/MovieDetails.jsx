@@ -1,15 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import { moviesFetchById } from '../../features/moviesSlice'
 
 const MovieDetails = () => {
-  const { id } = useParams()
-  const dispatch = useDispatch()
-
-  useEffect(() => {
+  const { id } = useParams();
+  const dispatch = useDispatch();
     dispatch(moviesFetchById(id))
-  }, [id])
+
   const { Title,  Plot, Released, Poster, Director, Actors, Language, imdbVotes, imdbRating } = useSelector(state => state.movies.search.searchList);
 
   return (
